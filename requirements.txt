@@ -6,6 +6,7 @@ scikit-learn
 catboost
 xgboost
 dill
+flask
 
 # TODO :- Build the package at the very end
 #-e .
