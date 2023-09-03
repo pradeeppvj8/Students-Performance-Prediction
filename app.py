@@ -2,12 +2,25 @@ from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
 from src.pipeline.predict_pipeline import CustomData, PredictionPipeline
+from src.pipeline.train_pipeline import TrainPipeline
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods = ['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template('index.html')
+    else:
+        if request.form.get("option") == 'train_model':
+            train_pipeline = TrainPipeline()
+            train_pipeline_successful = train_pipeline.initiate_train_pipeline()
+
+            if train_pipeline_successful :
+                return render_template('home.html')
+            else :
+                return render_template('index.html')
+        else :
+            return render_template('home.html')
 
 @app.route("/predict", methods=['GET','POST'])
 def predict():

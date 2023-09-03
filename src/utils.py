@@ -28,13 +28,13 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
             param = params[list(models.keys())[i]]
             model_name = list(models.keys())[i]
 
-            logging.info("Performing hyper paramter tuning for : " + model_name)
+            logging.info("Performing hyper parameter tuning for : " + model_name)
 
             # Perform hyper parameter tuning using grid search cv
             gs = GridSearchCV(model, param, cv = 5)
             gs.fit(X_train, y_train)
 
-            logging.info("Hyper paramter tuning finished for : " + model_name)
+            logging.info("Hyper parameter tuning finished for : " + model_name)
 
             # Fit the model based on the best params found by grid search cv
             model.set_params(**gs.best_params_)
