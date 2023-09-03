@@ -1,7 +1,7 @@
 # Project Name
 Students Performance Prediction
 
-#### -- Project Status: [Active]
+#### Project Status: [Active]
 
 ## Project Intro/Objective
 The purpose of this project is to predict student's performance based on attributes like gender, race, parents education level etc.
