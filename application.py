@@ -4,9 +4,9 @@ import pandas as pd
 from src.pipeline.predict_pipeline import CustomData, PredictionPipeline
 from src.pipeline.train_pipeline import TrainPipeline
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/", methods = ['GET', 'POST'])
+@application.route("/", methods = ['GET', 'POST'])
 def index():
     if request.method == 'GET':
         return render_template('index.html')
@@ -22,7 +22,7 @@ def index():
         else :
             return render_template('home.html')
 
-@app.route("/predict", methods=['GET','POST'])
+@application.route("/predict", methods=['GET','POST'])
 def predict():
     if request.method == 'GET':
         return render_template('home.html')
@@ -43,4 +43,4 @@ def predict():
         return render_template('home.html', results = results[0])
     
 if __name__ == '__main__':
-    app.run(host = "0.0.0.0")
+    application.run(host = "0.0.0.0")
