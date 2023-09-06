@@ -16,6 +16,7 @@ The purpose of this project is to predict student's performance based on attribu
 * Sklearn
 * Flask
 * Dockers
+* AWS ECR, AWS EC2
 
 
 ## Project Description
