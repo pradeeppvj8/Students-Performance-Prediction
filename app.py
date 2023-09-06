@@ -6,7 +6,9 @@ from src.pipeline.train_pipeline import TrainPipeline
 
 application = Flask(__name__)
 
-@application.route("/", methods = ['GET', 'POST'])
+app = application
+
+@app.route("/", methods = ['GET', 'POST'])
 def index():
     if request.method == 'GET':
         return render_template('index.html')
@@ -22,7 +24,7 @@ def index():
         else :
             return render_template('home.html')
 
-@application.route("/predict", methods=['GET','POST'])
+@app.route("/predict", methods=['GET','POST'])
 def predict():
     if request.method == 'GET':
         return render_template('home.html')
@@ -43,4 +45,4 @@ def predict():
         return render_template('home.html', results = results[0])
     
 if __name__ == '__main__':
-    application.run(host = "0.0.0.0")
+    app.run(host = "0.0.0.0" , port=8080)

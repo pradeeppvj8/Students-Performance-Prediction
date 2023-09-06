@@ -15,6 +15,7 @@ The purpose of this project is to predict student's performance based on attribu
 * Pandas, jupyter
 * Sklearn
 * Flask
+* Dockers
 
 
 ## Project Description
@@ -37,7 +38,6 @@ The purpose of this project is to predict student's performance based on attribu
 ## Featured Notebooks/Analysis/Deliverables
 * notebooks\Student_Performance_Prediction_EDA.ipynb
 * notebooks\Student_Performance_Prediction_Model_Training.ipynb
-* (src/pipeline/predict_pipeline.py)
 
 ## Contact
 * Name :- Pradeep.P 
