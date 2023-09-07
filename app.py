@@ -14,7 +14,7 @@ def index():
         return render_template('index.html')
     else:
         if request.form.get("option") == 'train_model':
-            # Initiate training pipeline
+            # Initiating training pipeline
             train_pipeline = TrainPipeline()
             train_pipeline_successful = train_pipeline.initiate_train_pipeline()
 
